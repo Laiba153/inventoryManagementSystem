@@ -55,8 +55,8 @@
                                             <td><?php echo $employee['phone'] ?>
                                             <td><?php echo $employee['email'] ?>
                                             <td><?php echo $employee['designation'] ?>
-                                            <td><a href="<?php echo base_url().'index.php/user/edit/'.$employee['ID']?>" class="btn btn-primary">Edit</a>
-                                            <a href="<?php echo base_url().'index.php/user/delete/'.$employee['ID']?>" class="btn btn-danger">Delete</a></td> 
+                                            <td><a href="<?php echo base_url().'index.php/employee/edit/'.$employee['ID']?>" class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url().'index.php/employee/delete/'.$employee['ID']?>" class="btn btn-danger">Delete</a></td> 
                                         </tr>
                                         <?php } } 
                                         else { ?>

@@ -55,8 +55,8 @@
                                             <td><?php echo $vendor['sales'] ?>
                                             <td><?php echo $vendor['hold_tax'] ?>
                                             <td><?php echo $vendor['sale_tax'] ?>
-                                            <td><a href="<?php echo base_url().'index.php/user/edit/'.$vendor['ID']?>" class="btn btn-primary">Edit</a>
-                                            <a href="<?php echo base_url().'index.php/user/delete/'.$vendor['ID']?>" class="btn btn-danger">Delete</a></td> 
+                                            <td><a href="<?php echo base_url().'index.php/vendor/edit/'.$vendor['ID']?>" class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url().'index.php/vendor/delete/'.$vendor['ID']?>" class="btn btn-danger">Delete</a></td> 
                                         </tr>
                                         <?php } } 
                                         else { ?>

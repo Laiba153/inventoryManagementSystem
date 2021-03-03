@@ -12,7 +12,7 @@
                                             <div class="col-8">
                                                 <h3>List of Clients</h3></div>
                                                 <div class="col-4 text-right">
-                                                    <a href="<?php echo base_url().'index.php/client/add_client'?>" class="btn btn-primary">Add Client</a>
+                                                    <a href="<?php echo base_url().'index.php/client/add_client'?>" class="btn btn-primary">Edit Client</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -49,8 +49,8 @@
                                             <td><?php echo $client['name'] ?></td>
                                             <td><?php echo $client['phone'] ?></td>
                                             <td><?php echo $client['address'] ?>
-                                            <td><a href="<?php echo base_url().'index.php/user/edit/'.$client['ID']?>" class="btn btn-primary">Edit</a>
-                                            <a href="<?php echo base_url().'index.php/user/delete/'.$client['ID']?>" class="btn btn-danger">Delete</a></td> 
+                                            <td><a href="<?php echo base_url().'index.php/client/edit/'.$client['ID']?>" class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url().'index.php/client/delete/'.$client['ID']?>" class="btn btn-danger">Delete</a></td> 
                                         </tr>
                                         <?php } } 
                                         else { ?>

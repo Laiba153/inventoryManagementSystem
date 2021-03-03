@@ -52,8 +52,8 @@
                                             <td><?php echo $product['amount'] ?></td>
                                             <td><?php echo $product['type'] ?>
                                             <td><?php echo $product['serial'] ?>
-                                            <td><a href="<?php echo base_url().'index.php/user/edit/'.$product['ID']?>" class="btn btn-primary">Edit</a>
-                                            <a href="<?php echo base_url().'index.php/user/delete/'.$product['ID']?>" class="btn btn-danger">Delete</a></td> 
+                                            <td><a href="<?php echo base_url().'index.php/product/edit/'.$product['ID']?>" class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url().'index.php/product/delete/'.$product['ID']?>" class="btn btn-danger">Delete</a></td> 
                                         </tr>
                                         <?php } } 
                                         else { ?>
