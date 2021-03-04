@@ -1,7 +1,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Clients</h1>
+                        <h1 class="mt-4">Pops</h1>
                                     
                         <div class="card mb-4">
                             <div class="card-header">
@@ -10,9 +10,9 @@
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-8">
-                                                <h3>List of Clients</h3></div>
+                                                <h3>List of Pops</h3></div>
                                                 <div class="col-4 text-right">
-                                                    <a href="<?php echo base_url().'index.php/client/add_client'?>" class="btn btn-primary">Add Client</a>
+                                                    <a href="<?php echo base_url().'index.php/pop/add_pop'?>" class="btn btn-primary">Add Pop</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -27,9 +27,7 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Pop</th>
+                                                <th>Location</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
@@ -37,23 +35,19 @@
                                             <tr>
                                                <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Phone</th>
-                                                <th>Address</th>
-                                                <th>Pop</th>
+                                                <th>Location</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
                                             
-                                        <?php if(!empty($clients)) {foreach ($clients as $client) { ?>
+                                        <?php if(!empty($pops)) {foreach ($pops as $pop) { ?>
                                         <tr>
-                                            <td><?php echo $client['ID'] ?></td>
-                                            <td><?php echo $client['name'] ?></td>
-                                            <td><?php echo $client['phone'] ?></td>
-                                            <td><?php echo $client['address'] ?></td>
-                                            <td><?php echo $client['pop'] ?></td>
-                                            <td><a href="<?php echo base_url().'index.php/client/edit/'.$client['ID']?>" class="btn btn-primary">Edit</a>
-                                            <a href="<?php echo base_url().'index.php/client/delete/'.$client['ID']?>" class="btn btn-danger">Delete</a></td> 
+                                            <td><?php echo $pop['ID'] ?></td>
+                                            <td><?php echo $pop['name'] ?></td>
+                                            <td><?php echo $pop['location'] ?></td>
+                                            <td><a href="<?php echo base_url().'index.php/pop/edit/'.$pop['ID']?>" class="btn btn-primary">Edit</a>
+                                            <a href="<?php echo base_url().'index.php/pop/delete/'.$pop['ID']?>" class="btn btn-danger">Delete</a></td> 
                                         </tr>
                                         <?php } } 
                                         else { ?>

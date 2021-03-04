@@ -11,6 +11,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Client
                             </a>
+                             <a class="nav-link" href="<?php echo base_url();?>index.php/Pop">
+                                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                                Pop
+                            </a>
                             <a class="nav-link" href="<?php echo base_url();?>index.php/Vendor">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>Vendor</a>
                             <a class="nav-link" href="<?php echo base_url();?>index.php/Employee">

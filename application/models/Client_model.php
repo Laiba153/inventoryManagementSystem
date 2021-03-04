@@ -11,6 +11,17 @@ class Client_model extends CI_model
 		$this->db->insert('client',$formArray); // insert into users (name,email)values(?,?)
 	}
 
+	public function getPop()
+	{
+
+		$query  = $this->db->get('pop');
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+
+	}
+
 	function getClient($clientId)
 	{
 		$this->db->where('ID',$clientId);

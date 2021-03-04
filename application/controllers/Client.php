@@ -1,4 +1,4 @@
-<?php
+pop_id<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Client extends CI_Controller {
@@ -11,19 +11,33 @@ class Client extends CI_Controller {
 		$clients = $this->Client_model->all();
 		$data = array();
 		$data['clients'] = $clients;
+
+		// $pops['pop'] = $this->Client_model->getPop();
+		// $this->load->view('pop',$pops);
+		
+		// $data1['pop']=$this->Client_model->getPop();
+		// $this->load->view('pop',$data1);;
+
 		$this->load->view('clients/index',$data);
 		$this->load->view('admin/_footer');
+
 	}
+
 
 	public function add_client()
 	{
+		$this->load->model('Client_model');
+	    $getPop = $this->Client_model->getPop();
+		// echo "<pre>";
+		// print_r($getPop);
+		// exit();
 		$this->load->view('admin/_header');
 		$this->load->view('admin/_sidebar');
-		$this->load->view('clients/add_client');
+		$this->load->view('clients/add_client',['getPop'=>$getPop]);
 		$this->load->view('admin/_footer');
 	}
 
-public function create()
+	public function create()
 	{
 		$this->load->model('Client_model');
 		//form validation libarary already included in autoload
@@ -45,6 +59,7 @@ public function create()
 			$formArray['name'] = $this->input->post('name');
 			$formArray['phone'] = $this->input->post('phone');
 			$formArray['address'] = $this->input->post('address');
+			$formArray['pop'] = $this->input->post('pop_id');
 			print_r($formArray);
 			$this->Client_model->create($formArray);
 			$this->session->set_flashdata('success','Client Added Successfully!');
@@ -55,9 +70,12 @@ public function create()
 	public function edit($clientId)
 	{
 		$this->load->model('Client_model');
+		$getPop = $this->Client_model->getPop();
 		$client = $this->Client_model->getClient($clientId);
-		$data = array();
-		$data['client'] = $client;
+		$data = array(
+		    'client' => $client,
+		    'getPop' => $getPop,
+		);
 		
 		$this->load->view('admin/_header');
 		$this->load->view('admin/_sidebar');
@@ -69,27 +87,27 @@ public function create()
 		$this->load->model('Client_model');
 		//update user
 		$formArray = array();
-			$formArray = array();
-			$formArray['name'] = $this->input->post('name');
-			$formArray['phone'] = $this->input->post('phone');
-			$formArray['address'] = $this->input->post('address');
-			$this->Client_model->updateClient($id,$formArray);
-			$this->session->set_flashdata('success','Client Updated Successfully!');
-			redirect(base_url().'index.php/client/index');		
+		$formArray['name'] = $this->input->post('name');
+		$formArray['phone'] = $this->input->post('phone');
+		$formArray['address'] = $this->input->post('address');
+		$formArray['pop'] = $this->input->post('pop_id');
+		$this->Client_model->updateClient($id,$formArray);
+		$this->session->set_flashdata('success','Client Updated Successfully!');
+		redirect(base_url().'index.php/client/index');		
 	}
 
 	function delete($clientId)
 		{
 			$this->load->model('Client_model');
-			$client = $this->Product_model->getClient($clientId);
+			$client = $this->Client_model->getClient($clientId);
 			if(empty($client))
 			{
 			$this->session->set_flashdata('failure','Record not found in Database');
-			redirect(base_url().'index.php/clients/index');
+			redirect(base_url().'index.php/client/index');
 			}
 			$this->Client_model->deleteClient($clientId);
 			$this->session->set_flashdata('success','Client deleted Successfully!');
-			redirect(base_url().'index.php/clients/index');
+			redirect(base_url().'index.php/client/index');
 		}
 	
 }

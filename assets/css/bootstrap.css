@@ -3480,6 +3480,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 768px) {
   .dropdown-menu-md-start {
+    width: 300px !important;
     --bs-position: start;
   }
   .dropdown-menu-md-start[data-bs-popper] {
